@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheater Calculator</title>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Your custom styles -->
+  <style>
+    /* Custom CSS for animations */
+    .animate-in-left {
+      animation: animate__fadeInLeft;
+    }
+    .animate-in-right {
+      animation: animate__fadeInRight;
+    }
+    .animate-in-up {
+      animation: animate__fadeInUp;
+    }
+    .animate-in-down {
+      animation: animate__fadeInDown;
+    }
+    .loading-wrapper {
+      display: none;
+    }
+    .loading-wrapper.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-primary is-bold animate__animated animate__fadeIn">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title animate__animated animate-in-up">Cheater Calculator</h1>
+        <p class="subtitle animate__animated animate-in-up">Find out the likelihood of your partner cheating!</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section animate__animated animate-in-up">
+    <div class="container">
+      <form id="cheatingForm" class="form animate__animated animate-in-up">
+        <div class="columns">
+          <div class="column is-half">
+            <div id="question1" class="question">
+              <div class="field">
+                <label class="label" for="gender">Your Gender (M/F):</label>
+                <div class="control">
+                  <input type="text" id="gender" class="input" placeholder="Enter M or F" required>
+                </div>
+              </div>
+            </div>
+            <div id="question2" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="trust">How trustworthy is your partner on a scale of 1-10:</label>
+                <div class="control">
+                  <input type="number" id="trust" class="input" placeholder="Enter a number between 1 and 10" min="1" max="10" required>
+                </div>
+              </div>
+            </div>
+            <div id="question3" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="behavior">How has your partner been acting lately (1-5):</label>
+                <div class="control">
+                  <input type="number" id="behavior" class="input" placeholder="Enter a number between 1 and 5" min="1" max="5" required>
+                </div>
+              </div>
+            </div>
+            <div id="question4" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="response">How do they respond over text:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="response">
+                      <option value="1">Immediate reply</option>
+                      <option value="2">Somewhat on time</option>
+                      <option value="3">Just ordinary</option>
+                      <option value="4">Late reply</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="question5" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="attention">How much attention do they give you:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="attention">
+                      <option value="1">Very attentive</option>
+                      <option value="2">Average attention</option>
+                      <option value="3">Slightly distant</option>
+                      <option value="4">Very distant</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div id="question6" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="affection">How affectionate are they:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="affection">
+                      <option value="1">Very affectionate</option>
+                      <option value="2">Moderately affectionate</option>
+                      <option value="3">Occasionally affectionate</option>
+                      <option value="4">Rarely affectionate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="question7" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="arguments">How often do you argue:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="arguments">
+                      <option value="1">Rarely</option>
+                      <option value="2">Occasionally</option>
+                      <option value="3">Frequently</option>
+                      <option value="4">Very often</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="question8" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="time">How much time do they spend away from home:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="time">
+                      <option value="1">Rarely away</option>
+                      <option value="2">Occasionally away</option>
+                      <option value="3">Frequently away</option>
+                      <option value="4">Very often away</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="question9" class="question is-hidden">
+              <div class="field">
+                <label class="label" for="social">How active are they on social media:</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="social">
+                      <option value="1">Rarely active</option>
+                      <option value="2">Occasionally active</option>
+                      <option value="3">Frequently active</option>
+                      <option value="4">Very often active</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-grouped animate__animated animate__fadeInUp">
+          <div class="control">
+            <button id="nextButton" type="button" class="button is-primary">Next</button>
+          </div>
+          <div class="control">
+            <button type="button" class="button is-light" onclick="resetForm()">Clear Form</button>
+          </div>
+        </div>
+        <div class="loading-wrapper animate__animated animate__fadeIn">
+          <div class="loading is-medium is-centered"></div> <!-- Circular loading icon -->
+        </div>
+      </form>
+
+      <div id="result" class="result animate__animated animate__fadeIn"></div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

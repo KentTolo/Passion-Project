@@ -1,0 +1,186 @@
+/* Body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle, #00FF00, #FFFFFF); /* Radial gradient */
+  background-size: 180% 180%; /* Increase background size */
+  background-position: center; /* Center the background */
+  color: #333; /* Text color */
+  margin: 0;
+  padding: 20px;
+  animation: backgroundAnimation 20s ease infinite alternate; /* Animation */
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-size: 180% 180%;
+  }
+  100% {
+    background-size: 200% 200%;
+  }
+}
+
+/* Header styles */
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff; /* Text color */
+  font-size: 32px; /* Larger font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
+  animation: glowAnimation 2s linear infinite alternate; /* Animation */
+}
+
+@keyframes glowAnimation {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Text color */
+  font-size: 18px; /* Larger font size */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
+}
+
+/* Form styles */
+.form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9); /* White with opacity */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  animation: fadeInAnimation 2s ease; /* Animation */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  color: #333; /* Dark text */
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* Smooth transition */
+  animation: inputAnimation 1.5s ease infinite alternate; /* Animation */
+}
+
+@keyframes inputAnimation {
+  0% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+.input:focus {
+  border-color: #4CAF50; /* Green border color on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green box shadow on focus */
+}
+
+.select select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M4 4l3 3H1z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px 16px;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  animation: pulseAnimation 2s ease infinite alternate; /* Animation */
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.button.is-primary {
+  background-color: #4CAF50; /* Green color */
+  color: #fff; /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+.button.is-primary:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.button.is-light {
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  border: 1px solid #ccc; /* Border */
+}
+
+.button.is-light:hover {
+  background-color: #f2f2f2; /* Light gray on hover */
+}
+
+/* Result styles */
+.result {
+  margin-top: 30px;
+}
+
+.result-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333; /* Dark text */
+  animation: slideInAnimation 2s ease; /* Animation */
+}
+
+@keyframes slideInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-message {
+  text-align: center;
+  font-size: 16px;
+  color: #555; /* Medium gray text */
+  animation: fadeInAnimation 2s ease; /* Animation */
+}
