@@ -1,3 +1,15 @@
+/*
+============================================================================
+
+Author: Keketso Tolo
+Date : 27 February 2024
+Title : passion project
+============================================================================
+*/
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const questions = document.querySelectorAll('.question');
   const nextButton = document.getElementById('nextButton');
